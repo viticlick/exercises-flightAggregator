@@ -32,16 +32,19 @@ The service should connect to the both suppliers using HTTP.
 
 # GodWinds 
 ## Request
+
 | Key | Value |
 |-----|------|
-|origin| 3 letter IATA code (eg. LHR, AMS)|
-|destination|3 letter IATA code (eg. LHR, AMS)|
-|departureDate | mm-dd-yyyy |
-|returnDate | mm-dd-yyyy |
-|numberOfPassengers | Number of passengers |
+| origin| 3 letter IATA code (eg. LHR, AMS) |
+| destination | 3 letter IATA code (eg. LHR, AMS) |
+| departureDate | mm-dd-yyyy |
+| returnDate | mm-dd-yyyy |
+| numberOfPassengers | Number of passengers |
 
 ## Response
+
 The response provided by GodWinds contains a list of flights with the following attributes:
+
 |Key|Value|
 |---|-----|
 |airline | Name of the airline |
