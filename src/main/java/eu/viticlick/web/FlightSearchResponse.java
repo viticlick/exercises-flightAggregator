@@ -1,6 +1,8 @@
 package eu.viticlick.web;
 
-import java.util.Date;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * Created by viticlick on 13/1/17.
@@ -12,15 +14,8 @@ public class FlightSearchResponse {
     private String fare;
     private String departureAirportCode;
     private String destinationAirportCode;
-    private String departureDate;
-
-    public String getArrivalDate() {
-        return arrivalDate;
-    }
-
-    public void setArrivalDate(String arrivalDate) {
-        this.arrivalDate = arrivalDate;
-    }
+    private LocalDateTime departureDate;
+    private LocalDateTime arrivalDate;
 
     public String getAirline() {
         return airline;
@@ -63,12 +58,18 @@ public class FlightSearchResponse {
     }
 
     public String getDepartureDate() {
-        return departureDate;
+        return departureDate.format(DateTimeFormatter.ISO_LOCAL_DATE);
     }
 
-    public void setDepartureDate(String departureDate) {
+    public void setDepartureDate(LocalDateTime departureDate) {
         this.departureDate = departureDate;
     }
 
-    private String arrivalDate;
+    public String getArrivalDate() {
+        return arrivalDate.format(DateTimeFormatter.ISO_LOCAL_DATE);
+    }
+
+    public void setArrivalDate(LocalDateTime arrivalDate) {
+        this.arrivalDate = arrivalDate;
+    }
 }
