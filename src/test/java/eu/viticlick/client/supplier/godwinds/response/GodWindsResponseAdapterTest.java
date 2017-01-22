@@ -24,7 +24,7 @@ public class GodWindsResponseAdapterTest {
     private static final String TARGET_ARRIVAL_DATE = "2017-02-25";
     private static final Character CABINCLASS = 'E';
     private static final Double PRICE = 102.12d;
-    private static final String FARE = "102.12";
+    private static final String FARE = "102,12";
 
 
     @Test

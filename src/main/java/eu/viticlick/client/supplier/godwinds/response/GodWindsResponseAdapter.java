@@ -13,7 +13,7 @@ public class GodWindsResponseAdapter implements ResponseAdapter<GodWindsResponse
         FlightSearchResponse targetResponse = new FlightSearchResponse();
         targetResponse.setAirline(response.getAirline());
         targetResponse.setSupplier(response.getSupplier());
-        targetResponse.setFare(response.getPrice().toString());
+        targetResponse.setFare(String.format("%.2f",response.getPrice()));
         targetResponse.setDepartureAirportCode(response.getDepartureAirportCode());
         targetResponse.setDestinationAirportCode(response.getDestinationAirportCode());
         targetResponse.setDepartureDate(response.getDepartureDate());

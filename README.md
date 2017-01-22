@@ -21,7 +21,7 @@ The service should produce a JSON response which contains a list of flights orde
 The service should expose the following search attriburtes
 
 | Key | Value |
-| --- | ---- |
+|-----|------|
 |origin| 3 letter IATA code (eg. LHR, AMS)|
 |destination|3 letter IATA code (eg. LHR, AMS)|
 |departureDate | Date in ISO8601 |
@@ -33,7 +33,7 @@ The service should connect to the both suppliers using HTTP.
 # GodWinds 
 ## Request
 | Key | Value |
-| --- | ---- |
+|-----|------|
 |origin| 3 letter IATA code (eg. LHR, AMS)|
 |destination|3 letter IATA code (eg. LHR, AMS)|
 |departureDate | mm-dd-yyyy |
@@ -55,7 +55,7 @@ The response provided by GodWinds contains a list of flights with the following 
 # EvilFlights
 ## Request
 | Key | Value |
-| --- | ---- |
+|-----|------|
 |from| 3 letter IATA code (eg. LHR, AMS)|
 |to|3 letter IATA code (eg. LHR, AMS)|
 |departureMonth | Mont as Integer(1-12) |
@@ -78,6 +78,7 @@ The response provided by GodWinds contains a list of flights with the following 
 |departureMonth | Month as Integer(1-12)|
 |departureYear | 4 digit Year |
 |returnDay | Day of the Month |
+|returnMonth | Month as Integer(1-12)|
 |returnYear | 4 digit Year |
 
 
