@@ -61,6 +61,7 @@ The response provided by GodWinds contains a list of flights with the following 
 |-----|------|
 |from| 3 letter IATA code (eg. LHR, AMS)|
 |to|3 letter IATA code (eg. LHR, AMS)|
+|departureDay | Day of the Month |
 |departureMonth | Mont as Integer(1-12) |
 |departureYear | 4 digit Year |
 |returnDay | Day of the Month |

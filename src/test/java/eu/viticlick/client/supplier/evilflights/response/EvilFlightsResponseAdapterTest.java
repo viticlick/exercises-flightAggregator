@@ -1,4 +1,4 @@
-package eu.viticlick.client.supplier.evilflights;
+package eu.viticlick.client.supplier.evilflights.response;
 
 import eu.viticlick.client.ResponseAdapter;
 import eu.viticlick.client.supplier.evilflights.response.EvilFlightsResponse;

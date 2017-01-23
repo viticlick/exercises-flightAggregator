@@ -1,29 +1,19 @@
-package eu.viticlick.web;
+package eu.viticlick.client.supplier.godwinds.request;
 
-
-import org.apache.tomcat.jni.Local;
-
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Size;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /**
- * Created by viticlick on 13/1/17.
+ * Created by viticlick on 23/1/17.
  */
-public class FlightSearchRequest {
+public class GodWindsRequest {
 
+    private static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("MM-dd-yyyy");
 
-    @Size(min=3, max = 3)
     private String origin;
-
-    @Size(min=3, max = 3)
     private String destination;
     private LocalDate departureDate;
     private LocalDate returnDate;
-
-    @Max(value = 4)
     private Integer numberOfPassengers;
 
     public String getOrigin() {
@@ -42,20 +32,20 @@ public class FlightSearchRequest {
         this.destination = destination;
     }
 
-    public LocalDate getDepartureDate() {
-        return departureDate;
+    public String getDepartureDate() {
+        return departureDate.format(DATE_TIME_FORMATTER);
     }
 
-    public void setDepartureDate(String departureDate) {
-        this.departureDate = LocalDate.parse(departureDate,DateTimeFormatter.ISO_LOCAL_DATE);
+    public void setDepartureDate(LocalDate departureDate) {
+        this.departureDate = departureDate;
     }
 
-    public LocalDate getReturnDate() {
-        return returnDate;
+    public String getReturnDate() {
+        return returnDate.format(DATE_TIME_FORMATTER);
     }
 
-    public void setReturnDate(String returnDate) {
-        this.returnDate = LocalDate.parse(returnDate,DateTimeFormatter.ISO_LOCAL_DATE);
+    public void setReturnDate(LocalDate returnDate) {
+        this.returnDate = returnDate;
     }
 
     public Integer getNumberOfPassengers() {
