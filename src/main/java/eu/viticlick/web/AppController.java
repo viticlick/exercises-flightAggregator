@@ -1,5 +1,7 @@
 package eu.viticlick.web;
 
+import eu.viticlick.client.SupplierAggregator;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,12 +18,14 @@ import java.util.Set;
 @Controller
 public class AppController {
 
+    @Autowired
+    private SupplierAggregator aggregator;
 
     @RequestMapping(path = "/api" , method = RequestMethod.POST )
     public @ResponseBody List<FlightSearchResponse> doRequest( @RequestBody FlightSearchRequest request){
         Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
         Set<ConstraintViolation<FlightSearchRequest>> constraintViolationSet = validator.validate(request);
-        List<FlightSearchResponse> response =  new LinkedList<>();
+        List<FlightSearchResponse> response =  aggregator.requestToSuppliers(request);
         return response;
     }
 }
